@@ -4,7 +4,7 @@
 
 
 
-int shapeFileReader(struct Shapes *file) // shapeFileReader is given the address of allshapes so anything written through the file will change main
+int readShapesFile(struct Shapes *file) // readShapesFile is given the address of allshapes so anything written through the file will change main
 {
     FILE *fInput;  //File pointer keeps track of where in the file the code is 
     char header[20]; // Static array to place the header 
@@ -16,6 +16,15 @@ int shapeFileReader(struct Shapes *file) // shapeFileReader is given the address
     file->shapesList= NULL; // A shapes array has not been created yet sop the pointer does not point anywhere yet
 
     fInput = fopen("ShapeStrokeData.txt","r"); // Opening the shapes file 
+    //fInput = fopen("testCases/AddtionalShapes.txt","r");
+    //fInput = fopen("testCases/IncorrectHeader.txt","r");
+    //fInput = fopen("testCases/IncorrectOneShape.txt","r");
+    //fInput = fopen("testCases/OneShape.txt","r");
+    //fInput = fopen("testCases/IncorrectPoints.txt","r")
+
+
+
+
 
     if (fInput == NULL) //Null is returned if the file couldnt open 
         {
@@ -127,7 +136,7 @@ void freeShapes(struct Shapes *file) // releases all the dynamic memory held by 
 int main()   //Main to test the function 
     {
         struct Shapes allShapes; //Once every shape has been succesfully read by the function, it holds this data in the struct 
-        int outcome = shapeFileReader(&allShapes); // Binds what error comes out of the function to outcome 
+        int outcome = readShapesFile(&allShapes); // Binds what error comes out of the function to outcome 
         int k;
             if (outcome != 0) // if output is not 0 i.e fail then we will get this error code in main 
             {

@@ -24,7 +24,7 @@ struct Shapes
 
 };
 
-int shapeFileReader(struct Shapes *file);// It fills the dynamic array structure 
+int readShapesFile(struct Shapes *file);// It fills the dynamic array structure 
 int allocateShapes(struct Shapes *file,int count); //creates a dynamic array of shapes 
 int allocatePoints(struct shapeData *shape,int count); // Makes the dynamic array of the points of the shapes
 void freeShapes(struct Shapes *file); // Frees the dynamic memory being used 
