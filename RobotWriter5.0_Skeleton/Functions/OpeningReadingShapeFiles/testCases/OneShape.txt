@@ -1,0 +1,7 @@
+NumShapes 1
+SQUARE 4 
+16,0,1
+16,16,1
+0,16,1
+0,0,1
+// The aim of this code is to test if the code wil still work if there is one shape instead of 5 

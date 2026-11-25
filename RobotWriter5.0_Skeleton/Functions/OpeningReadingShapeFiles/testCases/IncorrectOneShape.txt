@@ -1,0 +1,8 @@
+NumShapes 5
+SQUARE 4 
+16,0,1
+16,16,1
+0,16,1
+0,0,1
+
+//The aim of this code is to break the code with the contrdiction of 5 shapes and one one being present 
