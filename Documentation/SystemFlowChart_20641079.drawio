@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram id="UXU660Ct-q_GkDmLivRc" name="Innitial Flow Chart Main ">
-        <mxGraphModel dx="2194" dy="1088" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+        <mxGraphModel dx="7363" dy="6525" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -553,8 +553,8 @@
             </root>
         </mxGraphModel>
     </diagram>
-    <diagram id="JmgA8DCTcNxTZPZQ281H" name="Completed Flow Chart Main ">
-        <mxGraphModel dx="1058" dy="1303" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <diagram id="JmgA8DCTcNxTZPZQ281H" name="The Main System Flow">
+        <mxGraphModel dx="628" dy="442" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
             <root>
                 <mxCell id="15B9meJqVJX4oABOvHNq-0"/>
                 <mxCell id="15B9meJqVJX4oABOvHNq-1" parent="15B9meJqVJX4oABOvHNq-0"/>
@@ -567,7 +567,7 @@
                 <mxCell id="6H0VG-mB1xJHBG52cSkd-10" edge="1" parent="15B9meJqVJX4oABOvHNq-1" source="6H0VG-mB1xJHBG52cSkd-1" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="6H0VG-mB1xJHBG52cSkd-3">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="6H0VG-mB1xJHBG52cSkd-1" parent="15B9meJqVJX4oABOvHNq-1" style="whiteSpace=wrap;html=1;" value="outcome = shapeFileReader(&amp;amp;allShapes)" vertex="1">
+                <mxCell id="6H0VG-mB1xJHBG52cSkd-1" parent="15B9meJqVJX4oABOvHNq-1" style="whiteSpace=wrap;html=1;" value="outcome = readShapesFile(&amp;amp;allShapes)" vertex="1">
                     <mxGeometry height="60" width="190" x="260" y="130" as="geometry"/>
                 </mxCell>
                 <mxCell id="6H0VG-mB1xJHBG52cSkd-8" edge="1" parent="15B9meJqVJX4oABOvHNq-1" source="6H0VG-mB1xJHBG52cSkd-3" style="edgeStyle=none;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;">
@@ -839,15 +839,15 @@
             </root>
         </mxGraphModel>
     </diagram>
-    <diagram id="rkNWeN62qLX5sTTbbEyH" name="OpeningReadingShapes Function">
-        <mxGraphModel dx="1511" dy="1861" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <diagram id="rkNWeN62qLX5sTTbbEyH" name="Parser and dynamic memory ">
+        <mxGraphModel dx="628" dy="442" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
             <root>
                 <mxCell id="KTpAnmUMS12KjpPRwsyW-0"/>
                 <mxCell id="KTpAnmUMS12KjpPRwsyW-1" parent="KTpAnmUMS12KjpPRwsyW-0"/>
                 <mxCell id="DzF3BaG9wMcLyFdWwp2d-11" edge="1" parent="KTpAnmUMS12KjpPRwsyW-1" source="DzF3BaG9wMcLyFdWwp2d-0" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="DzF3BaG9wMcLyFdWwp2d-1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="DzF3BaG9wMcLyFdWwp2d-0" parent="KTpAnmUMS12KjpPRwsyW-1" style="ellipse;whiteSpace=wrap;html=1;shapeInside=1;" value="shapesFileReader(struct Shapes *file)" vertex="1">
+                <mxCell id="DzF3BaG9wMcLyFdWwp2d-0" parent="KTpAnmUMS12KjpPRwsyW-1" style="ellipse;whiteSpace=wrap;html=1;shapeInside=1;" value="readShapesFile(struct Shapes *file)" vertex="1">
                     <mxGeometry height="80" width="190" x="225" y="230" as="geometry"/>
                 </mxCell>
                 <mxCell id="DzF3BaG9wMcLyFdWwp2d-12" edge="1" parent="KTpAnmUMS12KjpPRwsyW-1" source="DzF3BaG9wMcLyFdWwp2d-1" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="DzF3BaG9wMcLyFdWwp2d-3">
@@ -1115,7 +1115,7 @@
         </mxGraphModel>
     </diagram>
     <diagram id="y5Dvb5ZlIJhrm9WZWj7U" name="Page-4">
-        <mxGraphModel dx="518" dy="522" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+        <mxGraphModel dx="521" dy="522" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
             <root>
                 <mxCell id="nYCgFB1rBYxu7va_ZGq9-0"/>
                 <mxCell id="nYCgFB1rBYxu7va_ZGq9-1" parent="nYCgFB1rBYxu7va_ZGq9-0"/>
