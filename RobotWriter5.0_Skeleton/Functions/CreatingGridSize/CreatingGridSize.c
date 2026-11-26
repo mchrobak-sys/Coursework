@@ -4,28 +4,29 @@
 
 int getCreatingGridSize(float *Height, float *Width)
 {
-    
+    int correct= 0 ; //This will create the loop, when 0 the input will be incorrect and 1 its correct  
+
+    while (correct == 0)
+    {
         printf("Please enter the grid size you would like to play on. Input the width and then the height of the grid\n");
 
         if (scanf("%f %f", Width,Height) != 2) // Ensures that the user has only entered 2 numbers 
         {
             printf("You must enter 2 values\n");
 
-            return -8;
+            while (getchar() !='\n'); //removes the bad input 
         }
         
         else if (*Width< MIN || *Width>Max || *Height<MIN || *Height>Max ) // Checks if the user inputs are within the range of the breif 
         {
             printf("The height and width must be within the range of 30-100, please enter your value again\n");
-            return -9;
-
         }
-
         else
         {
-
-            return 0; // If nothing goes wrong 0 will be returned 
+            return 1; // If nothing goes wrong 1 will be returned and the loop will stop  
         } 
+    }
+    return 0;
 }
 
 int main(void)
