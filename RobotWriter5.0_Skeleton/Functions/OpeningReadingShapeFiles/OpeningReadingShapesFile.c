@@ -16,7 +16,7 @@ int readShapesFile(struct Shapes *file) // readShapesFile is given the address o
     file->shapesList= NULL; // A shapes array has not been created yet sop the pointer does not point anywhere yet
 
     fInput = fopen("ShapeStrokeData.txt","r"); // Opening the shapes file 
-    //fInput = fopen("testCases/AddtionalShapes.txt","r");
+    //fInput = fopen("testCases/AddtionalShapes.txt","r"); //These are all test cases 
     //fInput = fopen("testCases/IncorrectHeader.txt","r");
     //fInput = fopen("testCases/IncorrectOneShape.txt","r");
     //fInput = fopen("testCases/OneShape.txt","r");
@@ -41,7 +41,7 @@ int readShapesFile(struct Shapes *file) // readShapesFile is given the address o
 
         }
     
-    printf("The file was succesfully opened and the first line was read\nThe %s is %d\n",header,shapeNumber);
+    //printf("The file was succesfully opened and the first line was read\nThe %s is %d\n",header,shapeNumber);
 
     if (allocateShapes(file,shapeNumber) !=0) // Number of shapes is passed to allocate shapes, this is where the dynamic array is made and where the address is stored
     {
@@ -69,7 +69,7 @@ int readShapesFile(struct Shapes *file) // readShapesFile is given the address o
             freeShapes(file); // clears the dynamic memory if a failure occurs 
             return -3; // A failure in reading any the names or point numbers will generate this error 
          }
-        printf("The shape is a %s with %d points\n",file->shapesList[i].shapeName,pointNumber);// This will print out the shape name and the number of points it has 
+        //printf("The shape is a %s with %d points\n",file->shapesList[i].shapeName,pointNumber);// This will print out the shape name and the number of points it has 
 
         if (allocatePoints(&file->shapesList[i],pointNumber) !=0) //This makes the shapes dynamic array of points.The pointNumber and address is passed of shape i to allocatePoints 
         {                                                         //Making the shapes own point array and stores the count inside the shape 
@@ -92,7 +92,7 @@ int readShapesFile(struct Shapes *file) // readShapesFile is given the address o
                     freeShapes(file);
                     return -4; //Creates this error if points cannot be read 
                  }
-            printf("Point:%d x:%f y:%f z:%d\n",j,file->shapesList[i].pointsList[j].x,file->shapesList[i].pointsList[j].y,file->shapesList[i].pointsList[j].z); //This will print out the point co-ordinate of each one of the points in the current shape 
+            //printf("Point:%d x:%f y:%f z:%d\n",j,file->shapesList[i].pointsList[j].x,file->shapesList[i].pointsList[j].y,file->shapesList[i].pointsList[j].z); //This will print out the point co-ordinate of each one of the points in the current shape 
             }
         
         }
@@ -133,6 +133,8 @@ void freeShapes(struct Shapes *file) // releases all the dynamic memory held by 
 
 }
 
+/*
+
 int main()   //Main to test the function 
     {
         struct Shapes allShapes; //Once every shape has been succesfully read by the function, it holds this data in the struct 
@@ -152,5 +154,5 @@ int main()   //Main to test the function
             }
             return 0;
     }
-
+*/
 

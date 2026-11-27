@@ -28,9 +28,22 @@ int drawShape(struct shapeData*shape,int row, int col,float gridSize)
     
     x = newOriginX + clearance; // calibrating the starting x position of pen 
 
-    y = newOriginY + clearance; //calibrating starting positon of y  
+    y = newOriginY + clearance; //calibrating starting positon of y
+    
+    //This code needs to go before the initial 'zeroing' of the pen position. 
+    //It is testing if the user enters values outside the range of the grid size and 
+    //or the cell co-ordinates it will generate an error.
 
-    sprintf(gCodeHolder,"G0 X%f y%f\n",x,y); // writing the command into the gcode holder 
+    
+    if(row<1 || row>3 || col<1 || col>3 || gridSize<30 ||gridSize>100 ) // if the user enters a co ordinate outside of the grid range
+    {
+        printf("You have inputted co-ordinates outside the cell or the grid size you have selected is too large\n");
+
+        return -9;
+    }
+    
+
+    sprintf(gCodeHolder,"G0 X%f Y%f\n",x,y); // writing the command into the gcode holder 
 
     SendCommands(gCodeHolder); // Makes the robot move to this point if it is not at this point already 
 
@@ -92,6 +105,7 @@ int drawShape(struct shapeData*shape,int row, int col,float gridSize)
     return 0;
 }
 
+
 #include "../OpeningReadingShapeFiles/OpeningReadingShapesFile.c"
 
 void SendCommands(char *buffer) //A replacement for the 'main main' for testing the code in the terminal
@@ -122,11 +136,33 @@ int main(void)
 
     }
 
+    //This is not an ideal way to test as its in a for loop, 
+    //However with checking the edge conditions and the cell co-ordinates 
+    //the input will be checked, however it will be printed out i amount of times for each shape 
+    //where i = the number of shapes.
+
     for (i = 0; i< allShapes.shapeNumber; i ++) //Goes through all of the shapes 
     {
         printf("Shape read %s\n",allShapes.shapesList[i].shapeName);
 
-        drawShape(&allShapes.shapesList[i],1,1,90);//gcode conversion so that the shape is made in cell 1,1 for a 90mm grid 
+        //drawShape(&allShapes.shapesList[i],1,1,90);//gcode conversion so that the shape is made in cell 1,1 for a 90mm grid 
+
+        //corner checks to make sure all cells are working correctly with different grid sizes
+        //drawShape(&allShapes.shapesList[i],3,3,100);
+
+        //drawShape(&allShapes.shapesList[i],1,3,30);
+
+        //drawShape(&allShapes.shapesList[i],3,1,100);
+
+        //error cases, including out of grid in x and y, and too small/ too large grid size 
+
+        drawShape(&allShapes.shapesList[0],4,1,100);
+
+        drawShape(&allShapes.shapesList[0],1,4,100);
+
+        drawShape(&allShapes.shapesList[0],1,1,120);
+
+        drawShape(&allShapes.shapesList[0], 1,1,10);
 
     }
     
