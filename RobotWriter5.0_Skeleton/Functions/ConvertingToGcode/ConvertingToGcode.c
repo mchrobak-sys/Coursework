@@ -25,7 +25,14 @@ int drawShape(struct shapeData*shape,int row, int col,float gridSize)
     newOriginX = (float)(col -1) * cellSize; // This caluclates the left edge of a seclected cell 
 
     newOriginY = -gridSize + (float)(row-1) * cellSize; //This caluclates the bottom edge of a seclected cell
+    
+    x = newOriginX + clearance; // calibrating the starting x position of pen 
 
+    y = newOriginY + clearance; //calibrating starting positon of y  
+
+    sprintf(gCodeHolder,"G0 X%f y%f\n",x,y); // writing the command into the gcode holder 
+
+    SendCommands(gCodeHolder); // Makes the robot move to this point if it is not at this point already 
 
     for (i = 0; i< shape->pointNumber;i++) //loop cycles through all of the points in the struct 
     {
