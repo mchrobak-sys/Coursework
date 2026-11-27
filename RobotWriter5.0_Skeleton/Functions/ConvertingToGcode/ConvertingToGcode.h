@@ -4,6 +4,7 @@
 
 #include "../OpeningReadingShapeFiles/OpeningReadingShapesFile.h"
 
+void SendCommands(char *buffer);
 
 int drawShape(struct shapeData *shape, int row , int col ,float cellSize);
 
