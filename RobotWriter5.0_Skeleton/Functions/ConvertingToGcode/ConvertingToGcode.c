@@ -16,8 +16,8 @@ int drawShape(struct shapeData*shape,int row, int col,float gridSize)
     NewWidth = cellSize - 2*clearance;
     Scale = NewWidth/ sizeOfShapes;  
     
-    newOriginX = (col -1)*cellSize; // This caluclates the bottom edge of a seclected cell 
-    newOriginY = -gridSize + (row-1) *cellSize; // This caluclates the left edge of a seclected cell
+    newOriginX = (float)(col -1) * cellSize; // This caluclates the left edge of a seclected cell 
+    newOriginY = -gridSize + (float)(row-1) * cellSize; //This caluclates the bottom edge of a seclected cell
 
     printf("Scale:%f\nX:%f\nY:%f\n",Scale,newOriginX,newOriginY);
 

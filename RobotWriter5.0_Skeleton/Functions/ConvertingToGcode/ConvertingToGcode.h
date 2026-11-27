@@ -2,7 +2,7 @@
 
 #define CONVERTINGTOGCODE_H
 
-#include "Functions/OpeningReadingShapeFiles/OpeningReadingShapesFile.h"
+#include "../OpeningReadingShapeFiles/OpeningReadingShapesFile.h"
 
 
 int drawShape(struct shapeData *shape, int row , int col ,float cellSize);
